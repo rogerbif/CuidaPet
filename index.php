@@ -40,5 +40,4 @@
 <p><strong>ERRO:</strong> Não foi possível Conectar ao Banco de Dados!</p>		
 </div>	
 <?php endif; ?>	
-<?php include('modal.php'); ?>
 <?php include(FOOTER_TEMPLATE); ?>
