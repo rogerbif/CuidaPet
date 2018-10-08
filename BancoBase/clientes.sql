@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Out-2018 às 03:53
+-- Generation Time: 08-Out-2018 às 05:20
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -56,6 +56,31 @@ INSERT INTO `customers` (`id`, `name`, `cpf_cnpj`, `birthdate`, `address`, `hood
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `eventos`
+--
+
+CREATE TABLE `eventos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `body` text COLLATE utf8_spanish_ci NOT NULL,
+  `url` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `class` varchar(45) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'event-important',
+  `start` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `end` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `inicio_normal` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `final_normal` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Extraindo dados da tabela `eventos`
+--
+
+INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `inicio_normal`, `final_normal`) VALUES
+(1, 'Teste', 'Teste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=1', 'event-special', '1539183600000', '1539144000000', '10/10/2018 12:00 AM', '10/10/2018 1:00 PM');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `users`
 --
 
@@ -71,7 +96,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(2, 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3');
+(2, 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3'),
+(3, 'roger', 'rogerbif@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -81,6 +107,12 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `eventos`
+--
+ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -100,10 +132,16 @@ ALTER TABLE `customers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
