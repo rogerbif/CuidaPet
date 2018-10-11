@@ -66,13 +66,14 @@ if (isset($_POST['eliminar_evento']))
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
 	<title><?=$titulo?></title>
 </head>
 <body>
 	 <h3><?=$titulo?></h3>
 	 <hr>
-     <b>Fecha inicio:</b> <?=$inicio?>
-     <b>Fecha termino:</b> <?=$final?>
+     <b>Data de Inicio:</b> <?=$inicio?>
+     <b>Data de Termino:</b> <?=$final?>
  	<p><?=$evento?></p>
 </body>
 <form action="" method="post">

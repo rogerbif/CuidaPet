@@ -309,10 +309,16 @@ if (isset($_POST['from']))
         $(function () {
             $('#from').datetimepicker({
                 language: 'pt',
+				use24hours: true,
+				format: 'DD/MM/YYYY HH:mm',
+				showMeridian: false ,
                 minDate: new Date()
             });
             $('#to').datetimepicker({
                 language: 'pt',
+				use24hours: true,
+				format: 'DD/MM/YYYY HH:mm',
+				showMeridian: false ,
                 minDate: new Date()
             });
 
