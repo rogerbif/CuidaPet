@@ -1,24 +1,5 @@
 <?php
 
-/**
-**
-**  BY iCODEART
-**
-**********************************************************************
-**                      REDES SOCIALES                            ****
-**********************************************************************
-**                                                                ****
-** FACEBOOK: https://www.facebook.com/icodeart                    ****
-** TWIITER: https://twitter.com/icodeart                          ****
-** YOUTUBE: https://www.youtube.com/c/icodeartdeveloper           ****
-** GITHUB: https://github.com/icodeart                            ****
-** TELEGRAM: https://telegram.me/icodeart                         ****
-** EMAIL: info@icodeart.com                                       ****
-**                                                                ****
-**********************************************************************
-**********************************************************************
-**/
-
 // Definimos nuestra zona horaria
 date_default_timezone_set("America/Sao_Paulo");
 
@@ -88,9 +69,9 @@ if (isset($_POST['from']))
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
         <meta charset="utf-8">
-        <title>Calendario</title>
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -102,11 +83,12 @@ if (isset($_POST['from']))
         <link rel="stylesheet" href="<?=$base_url?>css/bootstrap-datetimepicker.min.css" />
        <script src="<?=$base_url?>js/bootstrap-datetimepicker.pt-BR.js"></script>
 </head>
-
+<!--
 <body style="background: white;">
+-->
 
         <div class="container">
-
+				<!--
                 <div class="row">
                         <div class="page-header"><h2></h2></div>
                                 <div class="pull-left form-inline"><br>
@@ -117,7 +99,7 @@ if (isset($_POST['from']))
                                         </div>
                                         <div class="btn-group">
                                             <button class="btn btn-warning" data-calendar-view="year">Ano</button>
-                                            <button class="btn btn-warning active" data-calendar-view="month">Mês</button>
+                                            <button class="btn btn-warning active" data-calendar-view="day">Mês</button>
                                             <button class="btn btn-warning" data-calendar-view="week">Semana</button>
                                             <button class="btn btn-warning" data-calendar-view="day">Dia</button>
                                         </div>
@@ -128,6 +110,7 @@ if (isset($_POST['from']))
                                     </div>
 
                 </div><hr>
+				-->
 
                 <div class="row">
                         <div id="calendar"></div> <!-- Aqui se mostrara nuestro calendario -->
@@ -172,7 +155,7 @@ if (isset($_POST['from']))
                         events_source: '<?=$base_url?>obtener_eventos.php', 
 
                         // mostramos el calendario en el mes
-                        view: 'month',             
+                        view: 'day',             
 
                         // y dia actual
                         day: yyyy+"-"+mm+"-"+dd,   
@@ -332,5 +315,7 @@ if (isset($_POST['from']))
   </div>
 </div>
 </div>
+<!--
 </body>
 </html>
+-->
