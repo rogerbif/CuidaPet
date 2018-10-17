@@ -5,17 +5,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	    
 <title>Sistema CuidaPet</title>	    
 <meta name="description" content="">	    
-<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+<meta name="viewport" content="width=960, initial-scale=1">
+		
     <link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.min.css">	    
 	<style>	        
-	body {	            
+	html, body {	
+	width: 100%;
+	height: 100%
 	padding-top: 5px;
 	padding-bottom: 20px;	        
 	}	    </style>	    
 	
 	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">	    
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">	
+	
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	
 </head>	
 <body>	
