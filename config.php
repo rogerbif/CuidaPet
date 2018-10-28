@@ -1,7 +1,7 @@
 <?php		
 
 /** O nome do banco de dados*/	
-define('DB_NAME', 'clientes');		
+define('DB_NAME', 'cuidapet');		
 
 /** Usuário do banco de dados MySQL */	
 define('DB_USER', 'root');		

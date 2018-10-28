@@ -14,8 +14,13 @@
 
 <?php require_once( 'functions.php'); view($_GET[ 'id']); ?>
 <?php include(HEADER_TEMPLATE); ?>
-<h2>Cliente <?php echo $customer['name']; ?></h2>
+<h2>Cliente <?php echo $customer['id']; ?></h2>
 <hr>
+<?php if (!empty($_SESSION[ 'message'])) : ?>
+<div class="alert alert-<?php echo $_SESSION['type']; ?>">
+    <?php echo $_SESSION[ 'message']; ?>
+</div>
+<?php endif; ?>
 <!-- teste nova view -->
 <hr />
 <div class="row">

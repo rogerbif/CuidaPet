@@ -23,7 +23,7 @@
 $servidor='localhost';
 $usuario='root';
 $pass='';
-$bd='clientes';
+$bd='cuidapet';
 
 // Nos conectamos a la base de datos
 $conexion = new mysqli($servidor, $usuario, $pass, $bd);	
