@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Out-2018 às 02:11
+-- Generation Time: 29-Out-2018 às 03:54
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `clientes`
+-- Database: `cuidapet`
 --
 
 -- --------------------------------------------------------
@@ -50,8 +50,10 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `cpf_cnpj`, `birthdate`, `address`, `hood`, `zip_code`, `city`, `state`, `phone`, `mobile`, `ie`, `created`, `modified`) VALUES
-(1, 'Fulano de Tal', '123.456.789-00', '1989-01-01', 'Rua da Web, 123', 'Internet', 1234568, 'Teste', 'Teste', 5555555, 55555555, 123456, '2016-05-24 00:00:00', '2016-05-24 00:00:00'),
-(2, 'Roger de Souza Bif', '99673231087', '0000-00-00', 'Rua Belem 345', 'Sta Rita', 92500000, 'Guaiba', 'RS', 2147483647, 2147483647, 0, '2018-08-23 23:07:41', '2018-08-23 23:07:41');
+(1, 'Fulano de Tal', '123.456.789-00', '1989-01-01', 'Rua da Web, 123', 'Internet', 1234568, 'Teste', 'Teste', 5555555, 55555555, 123456, '2016-05-24 00:00:00', '2018-10-27 22:37:32'),
+(4, 'Roger de Souza Bif', '', '0000-00-00', 'Rua Belem 345', '', 92500000, 'Guaiba', 'RS', 2147483647, 0, 0, '2018-10-28 19:52:17', '2018-10-28 19:52:17'),
+(5, 'Roger de Souza Bif', '', '0000-00-00', 'Rua Belem 345', '', 92500000, 'Guaiba', 'RS', 2147483647, 0, 0, '2018-10-28 19:52:22', '2018-10-28 19:52:22'),
+(6, 'Roger de Souza Bif', '99673231087', '0000-00-00', 'Rua Belem 345', 'Sta Rita', 92500000, 'Guaiba', 'RS', 2147483647, 2147483647, 0, '2018-10-28 19:52:56', '2018-10-28 19:52:56');
 
 -- --------------------------------------------------------
 
@@ -92,6 +94,34 @@ INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `i
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `pets`
+--
+
+CREATE TABLE `pets` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `owner` int(11) NOT NULL,
+  `species` varchar(14) NOT NULL,
+  `breed` varchar(14) NOT NULL,
+  `fur` varchar(14) NOT NULL,
+  `color` varchar(14) NOT NULL,
+  `sex` varchar(14) NOT NULL,
+  `castrated` tinyint(1) NOT NULL,
+  `birthdate` date NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pets`
+--
+
+INSERT INTO `pets` (`id`, `name`, `owner`, `species`, `breed`, `fur`, `color`, `sex`, `castrated`, `birthdate`, `created`, `modified`) VALUES
+(1, 'Laica', 0, 'Cachorro', 'Pastor AlemÃ£o', 'Curto', 'Preto', 'Femea', 0, '0000-00-00', '2018-10-28 22:43:25', '2018-10-28 22:43:25');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `users`
 --
 
@@ -127,6 +157,12 @@ ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pets`
+--
+ALTER TABLE `pets`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -140,13 +176,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `pets`
+--
+ALTER TABLE `pets`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
