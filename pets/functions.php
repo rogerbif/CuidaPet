@@ -3,55 +3,55 @@
 require_once('../config.php');	
 require_once(DBAPI);		
 
-$customers = null;	
-$customer = null;		
+$pets = null;	
+$pet = null;		
 
-/**	 *  Listagem de Clientes	 */	
+/**	 *  Listagem de pets	 */	
 function index() {		
-	global $customers;		
-	$customers = find_all('customers');	
+	global $pets;		
+	$pets = find_all('pets');
 }
 
-/**	 *  Cadastro de Clientes	 */
+/**	 *  Cadastro de pets	 */
 function add() {
-    if (!empty($_POST['customer'])) {
+    if (!empty($_POST['pet'])) {
         $today = date_create('now', new DateTimeZone('America/Sao_Paulo'));
-        $customer = $_POST['customer'];
-        $customer['modified'] = $customer['created'] = $today -> format("Y-m-d H:i:s");
-        save('customers', $customer);
+        $pet = $_POST['pet'];
+        $pet['modified'] = $pet['created'] = $today -> format("Y-m-d H:i:s");
+        save('pets', $pet);
         header('location: index.php');
     }
 }
 
-/**	 *	Atualizacao/Edicao de Cliente	 */
+/**	 *	Atualizacao/Edicao de pet	 */
 function edit() {
     $now = date_create('now', new DateTimeZone('America/Sao_Paulo'));
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        if (isset($_POST['customer'])) {
-            $customer = $_POST['customer'];
-            $customer['modified'] = $now -> format("Y-m-d H:i:s");
-            update('customers', $id, $customer);
+        if (isset($_POST['pet'])) {
+            $pet = $_POST['pet'];
+            $pet['modified'] = $now -> format("Y-m-d H:i:s");
+            update('pets', $id, $pet);
             header('location: index.php');
         } else {
-            global $customer;
-            $customer = find('customers', $id);
+            global $pet;
+            $pet = find('pets', $id);
         }
     } else {
         header('location: index.php');
     }
 }
 
-/**	 *  Visualização de um Cliente	 */
+/**	 *  Visualização de um pet	 */
 function view($id = null) {
-    global $customer;
-    $customer = find('customers', $id);
+    global $pet;
+    $pet = find('pets', $id);
 }
 
-/**	 *  Exclusão de um Cliente	 */
+/**	 *  Exclusão de um pet	 */
 function delete($id = null) {
-    global $customer;
-    $customer = remove('customers', $id);
+    global $pet;
+    $pet = remove('pets', $id);
     header('location: index.php');
 }
 

@@ -18,65 +18,66 @@
    ?>
 
 <?php include(HEADER_TEMPLATE); ?>
-
+<!--
+Nome -name
+Proprietario - owner
+Especie - species
+Raca - Breed
+Pelo - fur
+Cor - color
+Sexo - sex
+Nascimento - birthdate
+Castrado - castrated
+ -->
 <header>
    <div class="row">
       <div class="col-sm-6">
-         <h2>Clientes</h2>
+         <h2>Pets</h2>
       </div>
 		  <div class="col-sm-6 text-right h2">                
-		  <a class="btn btn-primary" href="add.php"><i class="fa fa-plus"></i> Novo Cliente</a>                
+		  <a class="btn btn-primary" href="add.php"><i class="fa fa-plus"></i> Novo Pet</a>                
 		  <a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>            
 	  </div>
    </div>
 </header>
-
-<?php if (!empty($_SESSION['message'])): ?>
-	<div class="alert alert-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert">            
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
-		<?php echo $_SESSION['message']; ?>        
-	</div>
-	
-<?php clear_messages(); ?>    
-<?php endif; ?>    
-
 <hr>
-
 <table class="table table-hover">
    <thead>
       <tr>
          <th>ID</th>
          <th width="30%">Nome</th>
-         <th>CPF/CNPJ</th>
-         <th>Telefone</th>
-         <th>Atualizado em</th>
+		 <th>Proprietario</th>
+		 <th>Especie</th>
+		 <th>Raca</th>
+		 <th>Pelo</th>
+		 <th>Cor</th>
+         <th>Sexo</th>
+         <th>Nascimento</th>
+		 <th>Castrado</th>
+		 <th>Modificado</th>
          <th>Opções</th>
       </tr>
    </thead>
    <tbody>
-      <?php if ($customers): ?>    
-	  <?php foreach ($customers as $customer): ?>        
+      <?php if ($pets): ?>    
+	  <?php foreach ($pets as $pet): ?>        
 		  <tr>
-			 <td><?php
-				echo $customer['id'];
-				?></td>
-			 <td><?php
-				echo $customer['name'];
-				?></td>
-			 <td><?php
-				echo $customer['cpf_cnpj'];
-				?></td>
-			 <td>00 0000-0000</td>
-			 <td><?php
-				echo $customer['modified'];
-				?></td>
-			 <td class="actions text-right">                <a href="view.php?id=<?php
-				echo $customer['id'];
-				?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>                <a href="edit.php?id=<?php
-				echo $customer['id'];
-				?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php
-				echo $customer['id'];
-				?>">                    <i class="fa fa-trash"></i> Excluir                </a>            </td>
+			 <td><?php echo $pet['id']; ?></td>
+			 <td><?php echo $pet['name']; ?></td>
+			 <td><?php echo $pet['owner']; ?></td>
+			 <td><?php echo $pet['species']; ?></td>
+			 <td><?php echo $pet['breed']; ?></td>
+			 <td><?php echo $pet['fur']; ?></td>
+			 <td><?php echo $pet['color']; ?></td>
+			 <td><?php echo $pet['sex']; ?></td>
+			 <td><?php echo $pet['birthdate']; ?></td>
+			 <td><?php echo $pet['castrated']; ?></td>
+			 <td><?php echo $pet['modified']; ?></td>
+			 <td class="actions text-right">                
+				 <a href="view.php?id=<?php	echo $pet['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
+				 <a href="edit.php?id=<?php echo $pet['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>
+				 <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-pet="<?php echo $pet['id']; ?>"><i class="fa fa-trash"></i> Excluir</a>            
+			 </td>
 		  </tr>
       <?php endforeach; ?>    
 	  <?php else: ?>        

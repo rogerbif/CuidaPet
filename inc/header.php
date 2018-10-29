@@ -70,7 +70,7 @@
 				</a>
 			</div>
 			<div class="col-md-1">
-				<a href="<?php echo BASEURL; ?>customers" class="btn btn-default">				
+				<a href="<?php echo BASEURL; ?>pets" class="btn btn-default">				
 					<div class="row">					
 						<div class="col-md-12 text-center">						
 							<i class="fa fa-paw fa-4x"></i>					

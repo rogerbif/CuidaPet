@@ -14,59 +14,82 @@
 
 <?php require_once( 'functions.php'); view($_GET[ 'id']); ?>
 <?php include(HEADER_TEMPLATE); ?>
-<h2>Cliente <?php echo $customer['id']; ?></h2>
+<h2>Cliente <?php echo $pet['name']; ?></h2>
 <hr>
-<?php if (!empty($_SESSION[ 'message'])) : ?>
-<div class="alert alert-<?php echo $_SESSION['type']; ?>">
-    <?php echo $_SESSION[ 'message']; ?>
-</div>
-<?php endif; ?>
+
 <!-- teste nova view -->
+<?php //if (!empty($_SESSION[ 'message'])) : ?>
+<!--<div class="alert alert-<?php //echo $_SESSION['type']; ?>">
+    <?php //echo $_SESSION[ 'message']; ?>
+</div>-->
+<?php //endif; ?>
+<!--
+Nome -name -
+Proprietario - owner -
+Especie - species -
+Raca - Breed -
+Pelo - fur -
+Cor - color -
+Sexo - sex -
+Nascimento - birthdate -
+Castrado - castrated -
+ -->
 <hr />
 <div class="row">
 	<div class="form-group col-md-7">
-		<label for="name">Nome / Razão Social</label>
-		<input type="text" class="form-control" name="customer['name']" disabled value="<?php echo $customer['name']; ?>"> </div>
+		<label for="name">Nome</label>
+		<input type="text" class="form-control" name="pet['name']" disabled value="<?php echo $pet['name']; ?>"> 
+	</div>
+	
 	<div class="form-group col-md-3">
-		<label for="campo2">CNPJ / CPF</label>
-		<input type="text" class="form-control" name="customer['cpf_cnpj']" disabled value="<?php echo $customer['cpf_cnpj']; ?>"> </div>
+		<label for="campo2">Proprietario</label>
+		<input type="text" class="form-control" name="pet['owner']" disabled value="<?php echo $pet['owner']; ?>"> 
+	</div>
+	
 	<div class="form-group col-md-2">
 		<label for="campo3">Data de Nascimento</label>
-		<input type="text" class="form-control" name="customer['birthdate']" disabled value="<?php echo $customer['birthdate']; ?>"> </div>
+		<input type="text" class="form-control" name="pet['birthdate']" disabled value="<?php echo $pet['birthdate']; ?>"> 
+	</div>
 </div>
 <div class="row">
 	<div class="form-group col-md-5">
-		<label for="campo1">Endereço</label>
-		<input type="text" class="form-control" name="customer['address']" disabled value="<?php echo $customer['address']; ?>"> </div>
+		<label for="campo1">Especie</label>
+		<input type="text" class="form-control" name="pet['species']" disabled value="<?php echo $pet['species']; ?>"> 
+	</div>
+	
 	<div class="form-group col-md-3">
-		<label for="campo2">Bairro</label>
-		<input type="text" class="form-control" name="customer['hood']" disabled value="<?php echo $customer['hood']; ?>"> </div>
+		<label for="campo2">Raça</label>
+		<input type="text" class="form-control" name="pet['breed']" disabled value="<?php echo $pet['breed']; ?>"> 
+	</div>
+	
 	<div class="form-group col-md-2">
-		<label for="campo3">CEP</label>
-		<input type="text" class="form-control" name="customer['zip_code']" disabled value="<?php echo $customer['zip_code']; ?>"> </div>
+		<label for="campo3">Pelo</label>
+		<input type="text" class="form-control" name="pet['fur']" disabled value="<?php echo $pet['fur']; ?>">
+	</div>
+	
 	<div class="form-group col-md-2">
 		<label for="campo3">Data de Cadastro</label>
-		<input type="text" class="form-control" name="customer['created']" disabled value="<?php echo $customer['created']; ?>"> </div>
+		<input type="text" class="form-control" name="pet['created']" disabled value="<?php echo $pet['created']; ?>"> 
+	</div>
 </div>
 <div class="row">
 	<div class="form-group col-md-3">
-		<label for="campo1">Município</label>
-		<input type="text" class="form-control" name="customer['city']" disabled value="<?php echo $customer['city']; ?>"> </div>
+		<label for="campo1">Cor</label>
+		<input type="text" class="form-control" name="pet['color']" disabled value="<?php echo $pet['color']; ?>"> 
+	</div>
+	
 	<div class="form-group col-md-2">
-		<label for="campo2">Telefone</label>
-		<input type="text" class="form-control" name="customer['phone']" disabled value="<?php echo $customer['phone']; ?>"> </div>
+		<label for="campo2">Sexo</label>
+		<input type="text" class="form-control" name="pet['sex']" disabled value="<?php echo $pet['sex']; ?>"> 
+	</div>
+	
 	<div class="form-group col-md-2">
-		<label for="campo3">Celular</label>
-		<input type="text" class="form-control" name="customer['mobile']" disabled value="<?php echo $customer['mobile']; ?>"> </div>
-	<div class="form-group col-md-1">
-		<label for="campo3">UF</label>
-		<input type="text" class="form-control" name="customer['state']" disabled value="<?php echo $customer['state']; ?>"> </div>
-	<div class="form-group col-md-2">
-		<label for="campo3">Inscrição Estadual</label>
-		<input type="text" class="form-control" name="customer['ie']" disabled value="<?php echo $customer['ie']; ?>"> </div>
+		<label for="campo3">Castrado</label>
+		<input type="text" class="form-control" name="pet['castrated']" disabled value="<?php echo $pet['castrated']; ?>"> 
+	</div>
 </div>
 <div id="actions" class="row">
-    <div class="col-md-12"> <a href="edit.php?id=<?php echo $customer['id']; ?>" class="btn btn-primary">Editar</a> <a href="index.php" class="btn btn-default">Voltar</a> </div>
+    <div class="col-md-12"> <a href="edit.php?id=<?php echo $pet['id']; ?>" class="btn btn-primary">Editar</a> <a href="index.php" class="btn btn-default">Voltar</a> </div>
 </div>
 
 <?php include(FOOTER_TEMPLATE); ?>

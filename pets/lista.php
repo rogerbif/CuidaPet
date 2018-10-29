@@ -8,52 +8,51 @@
 	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">	    
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">	
 </head>
-
-<?php if (!empty($_SESSION['message'])): ?>
-	<div class="alert alert-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert">            
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
-		<?php echo $_SESSION['message']; ?>        
-	</div>
-	
-<?php clear_messages(); ?>    
-<?php endif; ?>    
-
+<!--
+Nome -name -
+Proprietario - owner -
+Especie - species -
+Raca - Breed -
+Pelo - fur -
+Cor - color -
+Sexo - sex -
+Nascimento - birthdate -
+Castrado - castrated 
+ -->
 <hr>
 <table class="table table-hover">
    <thead>
       <tr>
          <th>ID</th>
          <th width="30%">Nome</th>
-         <th>CPF/CNPJ</th>
-         <th>Telefone</th>
-         <th>Atualizado em</th>
-         <!--<th>Opções</th>-->
+         <th>Proprietario</th>
+		<!-- <th>Especie</th>
+		 <th>Raça</th>
+		 <th>Pelo</th>
+		 <th>Cor</th>-->
+		 <th>Sexo</th>
+		 <th>Nascimento</th>
+		 <!--<th>Castrado</th>-->
+         <th>Opções</th>
       </tr>
    </thead>
    <tbody>
-      <?php if ($customers): ?>    
-	  <?php foreach ($customers as $customer): ?>        
+      <?php if ($pets): ?>    
+	  <?php foreach ($pets as $pet): ?>        
 		  <tr>
-			 <td><?php
-				echo $customer['id'];
-				?></td>
-			 <td><?php
-				echo $customer['name'];
-				?></td>
-			 <td><?php
-				echo $customer['cpf_cnpj'];
-				?></td>
-			 <td>00 0000-0000</td>
-			 <td><?php
-				echo $customer['modified'];
-				?></td>
-			 <!--<td class="actions text-right">                <a href="view.php?id=<?php
-				//echo $customer['id'];
-				?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>                <a href="edit.php?id=<?php
-				//echo $customer['id'];
-				?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php
-				//echo $customer['id'];
-				?>">                    <i class="fa fa-trash"></i> Excluir                </a>            </td>-->
+			<td><?php echo $pet['id']; ?></td>
+			<td><?php echo $pet['name']; ?></td>
+			<td><?php echo $pet['owner']; ?></td>
+			<!--<td><?php //echo $pet['species']; ?></td>
+			<td><?php //echo $pet['breed']; ?></td>
+			<td><?php //echo $pet['fur']; ?></td>
+			<td><?php //echo $pet['color']; ?></td>-->
+			<td><?php echo $pet['sex']; ?></td>
+			<td><?php echo $pet['birthdate']; ?></td>
+			<!--<td><?php //echo $pet['castrated']; ?></td> -->
+			<td class="actions text-right"> 
+				 <a href="view.php?id=<?php echo $pet['id']; ?> " target="_top" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
+			</td>
 		  </tr>
       <?php endforeach; ?>    
 	  <?php else: ?>        

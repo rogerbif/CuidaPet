@@ -16,7 +16,14 @@
 <?php include(HEADER_TEMPLATE); ?>
 <h2>Cliente <?php echo $customer['name']; ?></h2>
 <hr>
+
 <!-- teste nova view -->
+<?php //if (!empty($_SESSION[ 'message'])) : ?>
+<!--<div class="alert alert-<?php //echo $_SESSION['type']; ?>">
+    <?php //echo $_SESSION[ 'message']; ?>
+</div>-->
+<?php //endif; ?>
+
 <hr />
 <div class="row">
 	<div class="form-group col-md-7">
