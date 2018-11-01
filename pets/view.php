@@ -13,6 +13,12 @@
 ?>
 
 <?php require_once( 'functions.php'); view($_GET[ 'id']); ?>
+<?php 
+require_once('../config.php');	
+require_once(DBAPI);
+$customer = null;
+$customer = find('customers', $pet['owner']);
+?>
 <?php include(HEADER_TEMPLATE); ?>
 <h2>Cliente <?php echo $pet['name']; ?></h2>
 <hr>
@@ -43,12 +49,12 @@ Castrado - castrated -
 	
 	<div class="form-group col-md-3">
 		<label for="campo2">Proprietario</label>
-		<input type="text" class="form-control" name="pet['owner']" disabled value="<?php echo $pet['owner']; ?>"> 
+		<input type="text" class="form-control" name="pet['owner']" disabled value="<?php echo $customer['name']; ?>"> 
 	</div>
 	
 	<div class="form-group col-md-2">
 		<label for="campo3">Data de Nascimento</label>
-		<input type="text" class="form-control" name="pet['birthdate']" disabled value="<?php echo $pet['birthdate']; ?>"> 
+		<input type="text" class="form-control" name="pet['birthdate']" disabled value="<?php echo date('d/m/Y', strtotime($pet['birthdate'])); ?>"> 
 	</div>
 </div>
 <div class="row">
@@ -69,7 +75,7 @@ Castrado - castrated -
 	
 	<div class="form-group col-md-2">
 		<label for="campo3">Data de Cadastro</label>
-		<input type="text" class="form-control" name="pet['created']" disabled value="<?php echo $pet['created']; ?>"> 
+		<input type="text" class="form-control" name="pet['created']" disabled value="<?php echo date('d/m/Y', strtotime($pet['created'])); ?>"> 
 	</div>
 </div>
 <div class="row">
@@ -85,7 +91,7 @@ Castrado - castrated -
 	
 	<div class="form-group col-md-2">
 		<label for="campo3">Castrado</label>
-		<input type="text" class="form-control" name="pet['castrated']" disabled value="<?php echo $pet['castrated']; ?>"> 
+		<input type="text" class="form-control" name="pet['castrated']" disabled value="<?php echo $pet['castrated'] ? 'Sim' : 'Não' ?>"> 
 	</div>
 </div>
 <div id="actions" class="row">

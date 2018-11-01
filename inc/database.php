@@ -35,13 +35,13 @@ function find( $table = null, $id = null ) {
 		} else {		    		    
 			$sql = "SELECT * FROM " . $table;		    
 			$result = $database->query($sql);		    		    
-			if ($result->num_rows > 0) {		      
+			if ($result->num_rows > 0) {
 				$found = $result->fetch_all(MYSQLI_ASSOC);	        	        
 
 				/* Metodo alternativo	        
 				$found = array();		        
 				while ($row = $result->fetch_assoc()) {	          
-				array_push($found, $row);	        
+				array_push($found, $row);       
 				} */		    
 			}		  
 		}		
