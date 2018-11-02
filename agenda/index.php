@@ -272,7 +272,7 @@ if (isset($_POST['from']))
                         <input type='text' id="from" name="from" class="form-control" readonly />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </div>
-
+					
                     <br>
 
                     <label for="to">Final</label>
@@ -304,29 +304,30 @@ if (isset($_POST['from']))
                     <label for="body">Evento</label>
                     <textarea id="body" name="event" required class="form-control" rows="3"></textarea>
 
-    <script type="text/javascript">
-        $(function () {
-            $('#from').datetimepicker({
-                language: 'pt',
-				use24hours: true,
-				format: 'DD/MM/YYYY HH:mm',
-				showMeridian: false ,
-                minDate: new Date()
-            });
-            $('#to').datetimepicker({
-                language: 'pt',
-				use24hours: true,
-				format: 'DD/MM/YYYY HH:mm',
-				showMeridian: false ,
-                minDate: new Date()
-            });
-
-        });
-    </script>
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
-          <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Adicionar</button>
+					<script type="text/javascript">
+						$(function () {
+							$('#from').datetimepicker({
+								language: 'pt',
+								use24hours: true,
+								showMeridian: false ,
+								format: "DD/MM/YYYY HH:MM",
+								minDate: new Date(),
+								defaultDate: "<?php echo date('Y/m/d h:i'); ?>"
+							});
+							$('#to').datetimepicker({
+								language: 'pt',
+								use24hours: true,
+								showMeridian: false ,
+								format: "DD/MM/YYYY HH:MM",
+								minDate: new Date(),
+								defaultDate: "<?php echo date('Y/m/d h:i'); ?>"
+							});
+						});
+					</script>
+					</div>
+	<div class="modal-footer">
+		  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+		  <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Adicionar</button>
         </form>
     </div>
   </div>
