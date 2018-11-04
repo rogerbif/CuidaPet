@@ -1,16 +1,6 @@
 <?php
 
-/**
-**
-** TWIITER: https://twitter.com/icodeart                          ****
-** YOUTUBE: https://www.youtube.com/c/icodeartdeveloper           ****
-** GITHUB: https://github.com/icodeart                            ****
-** TELEGRAM: https://telegram.me/icodeart                         ****
-** EMAIL: info@icodeart.com                                       ****
-**                                                                ****
-**********************************************************************
-**********************************************************************
-**/
+require_once('../config.php');	
 require_once(DBAPI);
 
 // Evaluar los datos que ingresa el usuario y eliminamos caracteres no deseados.
