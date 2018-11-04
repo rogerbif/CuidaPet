@@ -2,13 +2,6 @@
 
 /**
 **
-**  BY iCODEART
-**
-**********************************************************************
-**                      REDES SOCIALES                            ****
-**********************************************************************
-**                                                                ****
-** FACEBOOK: https://www.facebook.com/icodeart                    ****
 ** TWIITER: https://twitter.com/icodeart                          ****
 ** YOUTUBE: https://www.youtube.com/c/icodeartdeveloper           ****
 ** GITHUB: https://github.com/icodeart                            ****
@@ -18,6 +11,7 @@
 **********************************************************************
 **********************************************************************
 **/
+require_once(DBAPI);
 
 // Evaluar los datos que ingresa el usuario y eliminamos caracteres no deseados.
 function evaluar($valor) 

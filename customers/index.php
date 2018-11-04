@@ -17,7 +17,7 @@
    index();
    ?>
 
-<?php include(HEADER_TEMPLATE); ?>
+<?php include(HEADER_TEMPLATE); ?>	
 
 <header>
    <div class="row">

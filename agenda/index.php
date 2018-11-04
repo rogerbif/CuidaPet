@@ -1,96 +1,52 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: /cuidapet/registration/login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: /cuidapet/registration/login.php");
+  }
+?>
+
 <?php
-
-/**
-**
-**  BY iCODEART
-**
-**********************************************************************
-**                      REDES SOCIALES                            ****
-**********************************************************************
-**                                                                ****
-** FACEBOOK: https://www.facebook.com/icodeart                    ****
-** TWIITER: https://twitter.com/icodeart                          ****
-** YOUTUBE: https://www.youtube.com/c/icodeartdeveloper           ****
-** GITHUB: https://github.com/icodeart                            ****
-** TELEGRAM: https://telegram.me/icodeart                         ****
-** EMAIL: info@icodeart.com                                       ****
-**                                                                ****
-**********************************************************************
-**********************************************************************
-**/
-
-// Definimos nuestra zona horaria
 date_default_timezone_set("America/Sao_Paulo");
-
-// incluimos el archivo de funciones
-include 'funciones.php';
-
-// incluimos el archivo de configuracion
 include 'config.php';
-
-// Verificamos si se ha enviado el campo con name from
+include 'funciones.php';
 if (isset($_POST['from'])) 
 {
-
-    // Si se ha enviado verificamos que no vengan vacios
     if ($_POST['from']!="" AND $_POST['to']!="") 
     {
-
-        // Recibimos el fecha de inicio y la fecha final desde el form
-
         $inicio = _formatear($_POST['from']);
-        // y la formateamos con la funcion _formatear
-
         $final  = _formatear($_POST['to']);
-
-        // Recibimos el fecha de inicio y la fecha final desde el form
-
         $inicio_normal = $_POST['from'];
-
-        // y la formateamos con la funcion _formatear
         $final_normal  = $_POST['to'];
-
-        // Recibimos los demas datos desde el form
         $titulo = evaluar($_POST['title']);
-
-        // y con la funcion evaluar
         $body   = evaluar($_POST['event']);
-
-        // reemplazamos los caracteres no permitidos
         $clase  = evaluar($_POST['class']);
-
-        // insertamos el evento
         $query="INSERT INTO eventos VALUES(null,'$titulo','$body','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
-
-        // Ejecutamos nuestra sentencia sql
         $conexion->query($query); 
-
-        // Obtenemos el ultimo id insetado
         $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
         $row = $im->fetch_row();  
         $id = trim($row[0]);
-
-        // para generar el link del evento
         $link = "$base_url"."descripcion_evento.php?id=$id";
-
-        // y actualizamos su link
         $query="UPDATE eventos SET url = '$link' WHERE id = $id";
-
-        // Ejecutamos nuestra sentencia sql
         $conexion->query($query); 
-
-        // redireccionamos a nuestro calendario
         header("Location:$base_url"); 
     }
 }
 
  ?>
 
+ 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
         <meta charset="utf-8">
-        <title>Calendario</title>
+        <title>Agenda</title>
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -101,7 +57,17 @@ if (isset($_POST['from']))
         <script src="<?=$base_url?>js/bootstrap-datetimepicker.js"></script>
         <link rel="stylesheet" href="<?=$base_url?>css/bootstrap-datetimepicker.min.css" />
        <script src="<?=$base_url?>js/bootstrap-datetimepicker.pt-BR.js"></script>
+	   <style>
+		.img-fluid {
+			max-width: 100%;
+			height: auto;
+		}
+		</style>
 </head>
+
+<header>
+<?php include_once('header.php'); ?>
+</header>
 
 <body style="background: white;">
 
@@ -307,20 +273,26 @@ if (isset($_POST['from']))
 					<script type="text/javascript">
 						$(function () {
 							$('#from').datetimepicker({
-								language: 'pt',
+								orientation: 'left',
+								inline: true,
+								sideBySide: true,
+								defaultDate: "<?php echo date('Y/m/d h:i A'); ?>",
+								language: 'pt-BR',
 								use24hours: true,
-								showMeridian: false ,
-								format: "DD/MM/YYYY HH:MM",
-								minDate: new Date(),
-								defaultDate: "<?php echo date('Y/m/d h:i'); ?>"
+								showMeridian: false,
+								format: 'DD/MM/YYYY HH:mm',
+								minDate: moment().subtract(1, 'days')
 							});
 							$('#to').datetimepicker({
-								language: 'pt',
+								orientation: 'left',
+								inline: true,
+								sideBySide: true,
+								defaultDate: "<?php echo date('Y/m/d h:i A'); ?>",
+								language: 'pt-BR',
 								use24hours: true,
-								showMeridian: false ,
-								format: "DD/MM/YYYY HH:MM",
-								minDate: new Date(),
-								defaultDate: "<?php echo date('Y/m/d h:i'); ?>"
+								showMeridian: false,
+								format: 'DD/MM/YYYY HH:mm',
+								minDate: moment().subtract(1, 'days')
 							});
 						});
 					</script>

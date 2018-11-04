@@ -1,23 +1,4 @@
 <?php
-
-/**
-**
-**  BY iCODEART
-**
-**********************************************************************
-**                      REDES SOCIALES                            ****
-**********************************************************************
-**                                                                ****
-** FACEBOOK: https://www.facebook.com/icodeart                    ****
-** TWIITER: https://twitter.com/icodeart                          ****
-** YOUTUBE: https://www.youtube.com/c/icodeartdeveloper           ****
-** GITHUB: https://github.com/icodeart                            ****
-** TELEGRAM: https://telegram.me/icodeart                         ****
-** EMAIL: info@icodeart.com                                       ****
-**                                                                ****
-**********************************************************************
-**********************************************************************
-**/
     
     //incluimos nuestro archivo config
     include 'config.php'; 
@@ -67,12 +48,13 @@ if (isset($_POST['eliminar_evento']))
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<title><?=$titulo?></title>
 </head>
 <body>
 	 <h3><?=$titulo?></h3>
 	 <hr>
-     <b>Data de Inicio:</b> <?=$inicio?>
+     <b>Data de Inicio:</b> <?=$inicio?></br>
      <b>Data de Termino:</b> <?=$final?>
  	<p><?=$evento?></p>
 </body>
