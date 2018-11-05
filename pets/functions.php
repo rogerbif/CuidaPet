@@ -4,7 +4,7 @@ require_once('../config.php');
 require_once(DBAPI);		
 
 $pets = null;	
-$pet = null;		
+$pet = null;	
 
 /**	 *  Listagem de pets	 */	
 function index() {		

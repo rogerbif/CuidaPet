@@ -61,7 +61,7 @@ Castrado - castrated
          <th>Nascimento</th>
 		 <th>Castrado</th>
 		 <th>Modificado</th>
-         <th>Opções</th>
+         <th class="actions text-right">Opções</th>
       </tr>
    </thead>
    <tbody>
