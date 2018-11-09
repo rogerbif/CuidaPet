@@ -67,7 +67,9 @@ Castrado - castrated
 			<td><?php echo date('d/m/Y', strtotime($pet['birthdate'])); ?></td>
 			<!--<td><?php //echo $pet['castrated']; ?></td> -->
 			<td class="actions text-right"> 
-				 <a href="view.php?id=<?php echo $pet['id']; ?> " target="_top" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
+				 <a href="view.php?id=<?php echo $pet['id']; ?> " target="_top" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
+				 <a href="edit.php?id=<?php echo $pet['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
+				 <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $pet['id']; ?>"><i class="fa fa-trash"></i></a>    
 			</td>
 		  </tr>
       <?php endforeach; ?>    
