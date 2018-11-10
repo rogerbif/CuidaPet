@@ -113,7 +113,7 @@ $customer = find('customers', $pet['owner']);
 								<!-- Card body -->
 								<div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
 									  <div class="card-body">
-											<embed id="embedCustomer" type="text/html" src="../cadastros/lista_registros.php?customerId=<?php echo $customer['id']; ?>" width="100%" height="330px" />
+											<embed id="embedCustomer" type="text/html" src="../pets/lista_pep.php?customerId=<?php echo $customer['id']; ?>" width="100%" height="330px" />
 									  </div>
 								</div>
 						  </div>
