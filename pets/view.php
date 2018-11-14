@@ -99,7 +99,7 @@ $customer = find('customers', $pet['owner']);
         </div>
 
         <div class="col-md-7">
-			<div style="height: 750px;">
+			<div style="height: 850px; width: 650px;">
 					<!--Accordion wrapper-->
 						<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 						  <!-- Accordion card 1 begin -->

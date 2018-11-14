@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Nov-2018 às 07:13
--- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 7.2.11
+-- Generation Time: 14-Nov-2018 às 15:50
+-- Versão do servidor: 10.1.34-MariaDB
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -50,9 +50,9 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `cpf_cnpj`, `birthdate`, `address`, `hood`, `zip_code`, `city`, `state`, `phone`, `mobile`, `ie`, `created`, `modified`) VALUES
-(1, 'Fulano de Tal', '123.456.789-00', '1989-01-01', 'Rua da Web, 123', 'Internet', 1234568, 'Teste', 'Teste', 5555555, 55555555, 123456, '2016-05-24 00:00:00', '2018-10-27 22:37:32'),
-(4, 'Roger de Souza Bif', '', '0000-00-00', 'Rua Belem 345', '', 92500000, 'Guaiba', 'RS', 2147483647, 0, 0, '2018-10-28 19:52:17', '2018-10-28 19:52:17'),
-(5, 'Roger de Souza Bif', '', '0000-00-00', 'Rua Belem 345', '', 92500000, 'Guaiba', 'RS', 2147483647, 0, 0, '2018-10-28 19:52:22', '2018-10-28 19:52:22'),
+(1, 'Tavico das Guria', '123.456.789-00', '1989-01-01', 'Rua da Web, 123', 'Internet', 1234568, 'Teste', 'Teste', 5555555, 55555555, 123456, '2016-05-24 00:00:00', '2018-11-01 12:48:01'),
+(4, 'Eduardo Bujak', '', '0000-00-00', 'Rua Belem 345', '', 92500000, 'Guaiba', 'RS', 2147483647, 0, 0, '2018-10-28 19:52:17', '2018-11-01 12:37:34'),
+(5, 'Raquel Kayser', '', '0000-00-00', 'Rua Belem 345', '', 92500000, 'Guaiba', 'RS', 2147483647, 0, 0, '2018-10-28 19:52:22', '2018-11-01 12:39:07'),
 (6, 'Roger de Souza Bif', '99673231087', '0000-00-00', 'Rua Belem 345', 'Sta Rita', 92500000, 'Guaiba', 'RS', 2147483647, 2147483647, 0, '2018-10-28 19:52:56', '2018-10-28 19:52:56');
 
 -- --------------------------------------------------------
@@ -90,10 +90,9 @@ INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `i
 (13, 'BBBBB', 'BBBBBB', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=13', 'event-info', '1539604800000', '1539608400000', '15/10/2018 09:00', '15/10/2018 10:00'),
 (14, 'Teste 16', 'Teste 16', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=14', 'event-success', '1539707220000', '1539710820000', '16/10/2018 13:27', '16/10/2018 14:27'),
 (15, 'TEste', 'TEsteTEste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=15', 'event-special', '1540656000000', '1540659600000', '27/10/2018 13:00', '27/10/2018 14:00'),
-(16, 'testett', 'teste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=16', 'event-info', '1515679200000', '1515682800000', '11/01/2018 12:00', '11/01/2018 13:00'),
-(17, 'teste', 'teste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=17', 'event-warning', '1515708000000', '1515711600000', '11/01/2018 20:00', '11/01/2018 21:00'),
-(23, 'aaaaaa', 'aaaaaaa', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=23', 'event-info', '1541135460000', '1541135460000', '02/11/2018 02:11', '02/11/2018 02:11'),
-(24, 'aaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaa', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=24', 'event-info', '1541171460000', '1541175060000', '02/11/2018 12:11', '02/11/2018 13:11');
+(16, 'Teste', 'Teste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=16', 'event-special', '1515672000000', '1515679200000', '11/01/2018 10:00', '11/01/2018 12:00'),
+(17, 'TESTE', 'TESTE', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=17', 'event-info', '1541430000000', '1541433600000', '05/11/2018 13:00', '05/11/2018 14:00'),
+(18, 'TESTE2', 'TESTE2', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=18', 'event-important', '1541433600000', '1541437200000', '05/11/2018 14:00', '05/11/2018 15:00');
 
 -- --------------------------------------------------------
 
@@ -121,7 +120,33 @@ CREATE TABLE `pets` (
 --
 
 INSERT INTO `pets` (`id`, `name`, `owner`, `species`, `breed`, `fur`, `color`, `sex`, `castrated`, `birthdate`, `created`, `modified`) VALUES
-(1, 'Laica', 0, 'Cachorro', 'Pastor AlemÃ£o', 'Curto', 'Preto', 'Femea', 0, '0000-00-00', '2018-10-28 22:43:25', '2018-10-28 22:43:25');
+(1, 'Laica', 4, 'Cachorro', 'Pastor AlemÃ£o', 'Curto', 'Preto', 'Femea', 0, '0000-00-00', '2018-10-28 22:43:25', '2018-11-01 12:37:19'),
+(2, 'Amora', 5, 'Cachorro', 'Vira-Lata', 'Longo', 'Preto', 'Femea', 1, '2011-01-01', '2018-11-01 12:40:49', '2018-11-01 12:40:49'),
+(3, 'Vagabundinho', 1, 'Crocodilo', 'Vira-Lata', 'Curto', 'Verde-Godzilla', 'Femea', 0, '2001-01-01', '2018-11-01 12:49:05', '2018-11-01 12:49:15');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `registros`
+--
+
+CREATE TABLE `registros` (
+  `id` int(11) NOT NULL,
+  `data` datetime NOT NULL,
+  `usuario` varchar(14) NOT NULL,
+  `observacoes` varchar(255) NOT NULL,
+  `diagnostico` varchar(255) NOT NULL,
+  `customerId` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `registros`
+--
+
+INSERT INTO `registros` (`id`, `data`, `usuario`, `observacoes`, `diagnostico`, `customerId`, `created`, `modified`) VALUES
+(4, '0000-00-00 00:00:00', 'admin', 'Teste', 'Teste', 4, '2018-11-14 12:49:02', '2018-11-14 12:49:02');
 
 -- --------------------------------------------------------
 
@@ -142,7 +167,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (2, 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3'),
-(3, 'roger', 'rogerbif@gmail.com', '202cb962ac59075b964b07152d234b70');
+(3, 'roger', 'rogerbif@gmail.com', '202cb962ac59075b964b07152d234b70'),
+(4, 'teste', 'teste@teste.com', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -167,6 +193,12 @@ ALTER TABLE `pets`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `registros`
+--
+ALTER TABLE `registros`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -186,19 +218,25 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `registros`
+--
+ALTER TABLE `registros`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
