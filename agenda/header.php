@@ -1,4 +1,4 @@
-	<div class="container" style="width: 82%;">
+	<div class="container" style="width: 65%; height: 60px;">
 		<div class="row1">
 			<div class="col-md-2">
 				<div class="row1">					

@@ -17,7 +17,8 @@ function add($table = null) {
         $cadastro = $_POST['cadastro'];
         $cadastro['modified'] = $cadastro['created'] = $today -> format("Y-m-d H:i:s");
         save($table, $cadastro);
-        header("location: lista_registros.php?customerId=".$_GET['id']);
+		$customerId = $_GET['customerId'];
+        header("location: lista_registros.php?customerId=".$customerId);
     }
 }
 

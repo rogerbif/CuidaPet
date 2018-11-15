@@ -30,52 +30,67 @@
         <div class="col-md-5">
 			<div style="height: 750px;">
 				<hr />
-				<h4>Dados Pessoais</h4>
+				<!-- card Dados Pessoais -->
+				<div class="card">
+					<div class="card-header" style="color: #007bff">
+						<h5>Dados Pessoais</h5>
+					</div>
 					<div class="row">
 						<div class="form-group col-md-12">
-							<label for="name">Nome</label>
-							<input type="text" class="form-control" name="customer['name']" disabled value="<?php echo $customer['name']; ?>"> </div>
+							<p style="margin-left: 20px;">Nome: </br><?php echo $customer['name']; ?></p>
+						</div>
 					</div>
 					<div class="row">
 						<div class="form-group col-md-6">
-							<label for="campo2">CPF</label>
-							<input type="text" class="form-control" name="customer['cpf_cnpj']" disabled value="<?php echo $customer['cpf_cnpj']; ?>"> </div>
+							<p style="margin-left: 20px;">CPF: </br> <?php echo $customer['cpf_cnpj']; ?></p>
+						</div>
 						<div class="form-group col-md-6">
-							<label for="campo3">Data de Nascimento</label>
-							<input type="text" class="form-control" name="customer['birthdate']" disabled value="<?php echo date("d/m/Y" , strtotime($customer['birthdate'])); ?>"> </div>
+							<p>Data de Nascimento: </br><?php echo date("d/m/Y" , strtotime($customer['birthdate'])); ?></p>
+						</div>
 					</div>
-				<h4>Endereço</h4>
-					<div class="row">
-						<div class="form-group col-md-6">
-							<label for="campo1">Endereço</label>
-							<input type="text" class="form-control" name="customer['address']" disabled value="<?php echo $customer['address']; ?>"> </div>
-						<div class="form-group col-md-6">
-							<label for="campo2">Bairro</label>
-							<input type="text" class="form-control" name="customer['hood']" disabled value="<?php echo $customer['hood']; ?>"> </div>
+				</div>
+				<!-- card Dados Endereço -->
+				<div class="card">
+					<div class="card-header" style="color: #007bff">
+						<h5>Endereço</h5>
 					</div>
 					<div class="row">
 						<div class="form-group col-md-6">
-							<label for="campo1">Município</label>
-							<input type="text" class="form-control" name="customer['city']" disabled value="<?php echo $customer['city']; ?>"> </div>
+							<p style="margin-left: 20px;">Endereço: </br><?php echo $customer['address']; ?></p>
+						</div>
+						<div class="form-group col-md-6">
+							<p>Bairro: </br><?php echo $customer['hood']; ?></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<p style="margin-left: 20px;">Município: </br><?php echo $customer['city']; ?></p>
+						</div>
 						<div class="form-group col-md-2">
-							<label for="campo3">UF</label>
-							<input type="text" class="form-control" name="customer['state']" disabled value="<?php echo $customer['state']; ?>"> </div>
+							<p>UF: </br><?php echo $customer['state']; ?></p>
+						</div>
 						<div class="form-group col-md-4">
-							<label for="campo3">CEP</label>
-							<input type="text" class="form-control" name="customer['zip_code']" disabled value="<?php echo $customer['zip_code']; ?>"> </div>
+							<p>CEP: </br><?php echo $customer['zip_code']; ?></p>
+						</div>
 					</div>
-					<h4>Dados para Contato</h4>
+				</div>
+				<!-- card Dados Animal -->
+				<div class="card">
+					<div class="card-header" style="color: #007bff">
+						<h5>Dados para Contato</h5>
+					</div>
 					<div class="row">
-						<div class="form-group col-md-4">
-							<label for="campo2">Telefone</label>
-							<input type="text" class="form-control" name="customer['phone']" disabled value="<?php echo $customer['phone']; ?>"> </div>
-						<div class="form-group col-md-4">
-							<label for="campo3">Celular</label>
-							<input type="text" class="form-control" name="customer['mobile']" disabled value="<?php echo $customer['mobile']; ?>"> </div>
-						<div class="form-group col-md-4">
-							<label for="campo3">Data de Cadastro</label>
-							<input type="text" class="form-control" name="customer['created']" disabled value="<?php echo date("d/m/Y" , strtotime($customer['created'])); ?>"> </div>
+						<div class="form-group col-md-3">
+							<p style="margin-left: 20px;">Telefone: </br><?php echo $customer['phone']; ?></p>
+						</div>
+						<div class="form-group col-md-3">
+							<p>Celular: </br><?php echo $customer['mobile']; ?></p>
+						</div>
+						<div class="form-group col-md-6">
+							<p>Data de Cadastro: </br><?php echo date("d/m/Y" , strtotime($customer['created'])); ?></p>
+						</div>
 					</div>
+				</div>
 			</div>
         </div>
 
