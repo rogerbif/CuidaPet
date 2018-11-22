@@ -64,7 +64,10 @@
     </div>
     <div id="actions" class="row">
         <div class="col-md-12">
-            <button type="submit" class="btn btn-primary">Salvar</button> <a href="index.php" class="btn btn-default">Cancelar</a> </div>
+            <button type="submit" class="btn btn-primary">Salvar</button> 
+            <a href="index.php" class="btn btn-default">Cancelar</a> </div>
+            <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete-modal" data-customer="<?php echo $customer['id']; ?>"><i class="fa fa-trash"></i> Excluir</a>
     </div>
 </form>
+<?php include('modal.php'); ?>
 <?php include(FOOTER_TEMPLATE); ?>

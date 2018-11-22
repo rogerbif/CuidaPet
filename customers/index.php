@@ -30,7 +30,7 @@
 						 <h2>Clientes</h2>
 				   </div>
 				</header>
-				<?php include('lista2.php'); ?>
+				<embed id="embedCustomer" type="text/html" src="lista2.php" width="600px" height="600px" />
 			</div>
         </div>
 

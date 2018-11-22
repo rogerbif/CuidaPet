@@ -13,33 +13,23 @@ $customers = find_all('customers');
 	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.min.css">	
 	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">	    
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">	
+
+   <script src="<?php echo BASEURL; ?>js/jquery.min.js"></script> 
+   <script src="<?php echo BASEURL; ?>js/jquery.dataTables.min.js"></script>  
+   <script src="<?php echo BASEURL; ?>js/dataTables.bootstrap.min.js"></script>            
+   <link rel="stylesheet" href="<?php echo BASEURL; ?>css/dataTables.bootstrap.min.css" />   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
 </head>
-<!--
-Nome -name -
-Proprietario - owner -
-Especie - species -
-Raca - Breed -
-Pelo - fur -
-Cor - color -
-Sexo - sex -
-Nascimento - birthdate -
-Castrado - castrated 
- -->
-<hr>
-<table class="table table-hover">
+
+<table id="bootstrap-table" class="table table-hover">
    <thead>
       <tr>
-         <th>ID</th>
-         <th width="15%">Nome</th>
-         <th width="15%">Proprietario</th>
-		<!-- <th>Especie</th>
-		 <th>Raça</th>
-		 <th>Pelo</th>
-		 <th>Cor</th>-->
-		 <th>Sexo</th>
-		 <th>Nascimento</th>
-		 <!--<th>Castrado</th>-->
-         <th>Opções</th>
+			<th>ID</th>
+			<th width="15%">Nome</th>
+			<th width="10%">Prop.</th>
+			<th>Sexo</th>
+			<th>Nasc.</th>
+			<th>Opções</th>
       </tr>
    </thead>
    <tbody>
@@ -59,13 +49,8 @@ Castrado - castrated
 					  </tr>
 			<?php endif; ?> 
 			</td>
-			<!--<td><?php //echo $pet['species']; ?></td>
-			<td><?php //echo $pet['breed']; ?></td>
-			<td><?php //echo $pet['fur']; ?></td>
-			<td><?php //echo $pet['color']; ?></td>-->
 			<td><?php echo $pet['sex']; ?></td>
 			<td><?php echo date('d/m/Y', strtotime($pet['birthdate'])); ?></td>
-			<!--<td><?php //echo $pet['castrated']; ?></td> -->
 			<td class="actions text-right"> 
 				 <a href="view.php?id=<?php echo $pet['id']; ?> " target="_top" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
 			</td>
@@ -78,4 +63,14 @@ Castrado - castrated
       <?php endif; ?>    
    </tbody>
 </table>
-<?php include('modal.php'); ?>
+
+<script>
+$(document).ready(function(){  
+	$('#bootstrap-table').DataTable({
+		"bInfo" : false,
+		"bLengthChange" : false,
+		dom: 'l<"toolbar">frtip',
+		"order": [[ 1, "asc" ]],    
+	});  
+ });  
+</script>
