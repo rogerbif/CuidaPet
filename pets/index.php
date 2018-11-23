@@ -25,17 +25,7 @@ $customer = null;
 $customers = find_all('customers');
 ?>
 <?php include(HEADER_TEMPLATE); ?>
-<!--
-Nome -name
-Proprietario - owner
-Especie - species
-Raca - Breed
-Pelo - fur
-Cor - color
-Sexo - sex
-Nascimento - birthdate
-Castrado - castrated
- -->
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-7">
@@ -47,7 +37,7 @@ Castrado - castrated
 					  </div>
 					</div>
 				</header>
-				<?php include('lista2.php'); ?>
+				<embed id="embedPets" type="text/html" src="lista2.php" width="600px" height="750px" />
 			</div>
         </div>
 

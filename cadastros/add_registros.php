@@ -62,7 +62,9 @@ index($table);
 
 			<div id="actions" class="row">
 				<div class="col-md-12">
-					<button type="submit" class="btn btn-primary">Salvar</button> <a href="<?php echo BASEURL; ?>cadastros/lista_registros.php?customerId=<?php echo $_GET['customerId']; ?>" class="btn btn-default">Cancelar</a> </div>
+					<button type="submit" class="btn btn-primary">Salvar</button> 
+					<a href="<?php echo BASEURL; ?>cadastros/lista_registros.php?customerId=<?php echo $_GET['customerId']; ?>" class="btn btn-default">Cancelar</a>
+				</div>
 			</div>
 		</div>
 	</form>

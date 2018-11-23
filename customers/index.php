@@ -30,7 +30,7 @@
 						 <h2>Clientes</h2>
 				   </div>
 				</header>
-				<embed id="embedCustomer" type="text/html" src="lista2.php" width="600px" height="600px" />
+				<embed id="embedCustomer" type="text/html" src="lista2.php" width="600px" height="750px" />
 			</div>
         </div>
 

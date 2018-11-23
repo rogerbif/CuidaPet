@@ -90,7 +90,7 @@ if (isset($_POST['from']))
 
                                 </div>
                                     <div class="pull-right form-inline"><br>
-                                        <button class="btn btn-info" data-toggle='modal' data-target='#add_evento'>Adicionar Evento</button>
+                                        <button class="btn btn-info" data-toggle='modal' data-target='#add_evento'>Adicionar</button>
                                     </div>
 
                 </div><hr>
@@ -229,7 +229,7 @@ if (isset($_POST['from']))
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Adicionar Novo Evento</h4>
+        <h4 class="modal-title" id="myModalLabel">Adicionar</h4>
       </div>
       <div class="modal-body">
         <form action="" method="post">
@@ -249,25 +249,23 @@ if (isset($_POST['from']))
 
                     <br>
 
-                    <label for="tipo">Tipo de evento</label>
+                    <label for="tipo">Tipo de Serviço</label>
                     <select class="form-control" name="class" id="tipo">
-                        <option value="event-info">Informação</option>
-                        <option value="event-success">Sucesso</option>
-                        <option value="event-important">Importante</option>
-                        <option value="event-warning">Advertencia</option>
-                        <option value="event-special">Especial</option>
+                        <option value="event-info">Consulta</option>
+                        <option value="event-success">Banho/Tosa</option>
+                        <option value="event-important">Vacina</option>
+                        <option value="event-special">Exame</option>
+                        <option value="event-warning">Cirurgia</option>
                     </select>
 
                     <br>
 
-
-                    <label for="title">Título</label>
-                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduce un título">
+                    <label for="title">Serviço</label>
+                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Informe o Serviço">
 
                     <br>
 
-
-                    <label for="body">Evento</label>
+                    <label for="body">Observações</label>
                     <textarea id="body" name="event" required class="form-control" rows="3"></textarea>
 
 					<script type="text/javascript">

@@ -9,20 +9,14 @@
 	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.min.css">	
 	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">	    
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">	
+	
+   <script src="<?php echo BASEURL; ?>js/jquery.min.js"></script> 
+   <script src="<?php echo BASEURL; ?>js/jquery.dataTables.min.js"></script>  
+   <script src="<?php echo BASEURL; ?>js/dataTables.bootstrap.min.js"></script>            
+   <link rel="stylesheet" href="<?php echo BASEURL; ?>css/dataTables.bootstrap.min.css" />   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
 </head>
-<!--
-Nome -name -
-Proprietario - owner -
-Especie - species -
-Raca - Breed -
-Pelo - fur -
-Cor - color -
-Sexo - sex -
-Nascimento - birthdate -
-Castrado - castrated 
- -->
-<hr>
-<table class="table table-hover">
+<table id="bootstrap-table" class="table table-hover">
    <thead>
       <tr>
          <th>ID</th>
@@ -33,7 +27,7 @@ Castrado - castrated
 		 <th>Pelo</th>
 		 <th>Cor</th>-->
 		 <th>Sexo</th>
-		 <th>Nascimento</th>
+		 <th>Nasc.</th>
 		 <!--<th>Castrado</th>-->
          <th>Opções</th>
       </tr>
@@ -75,4 +69,17 @@ Castrado - castrated
       <?php endif; ?>    
    </tbody>
 </table>
-<?php include('modal.php'); ?>
+<script>
+$(document).ready(function(){  
+	$('#bootstrap-table').DataTable({
+		"bInfo" : false,
+		"bLengthChange" : false,
+		dom: 'l<"toolbar">frtip',
+		"order": [[ 1, "desc" ]],
+		initComplete: function(){
+			  $("div.toolbar")
+				 .html('<div class="col-sm-6 text-right h5"><a class="btn btn-primary" href="<?php echo BASEURL; ?>pets/add3.php?customerId=<?php echo $_GET['customerId']; ?>"><i class="fa fa-plus"></i>Adicionar Registro</a></div>');
+		   }     
+	});  
+ });  
+</script>  

@@ -52,7 +52,7 @@
 $(document).ready(function(){  
 	$('#bootstrap-table').DataTable({
 		"bInfo" : false,
-		"iDisplayLength": 10,
+		"iDisplayLength": 8,
 		"bLengthChange" : false,
 		dom: 'l<"toolbar">frtip',
 		"order": [[ 1, "asc" ]],    

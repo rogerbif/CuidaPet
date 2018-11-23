@@ -46,7 +46,7 @@ require_once DBAPI;
 						<!-- Card body -->
 						<div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
 							<div class="card-body">
-								<embed id="embedCustomer" type="text/html" src="customers/lista.php" width="600px" height="505px" />
+								<embed id="embedCustomer" type="text/html" src="customers/lista.php" width="600px" height="480px" />
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@ require_once DBAPI;
 						<!-- Card body -->
 						<div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
 							<div class="card-body">
-								<embed id="embedPets" type="text/html" src="pets/lista.php" width="600px" height="505px" />
+								<embed id="embedPets" type="text/html" src="pets/lista.php" width="600px" height="480px" />
 							</div>
 						</div>
 					</div>

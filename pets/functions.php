@@ -19,7 +19,12 @@ function add() {
         $pet = $_POST['pet'];
         $pet['modified'] = $pet['created'] = $today -> format("Y-m-d H:i:s");
         save('pets', $pet);
-        header('location: index.php');
+        $customerId = $_GET['customerId'];
+        if ($customerId == ""){
+            header('location: index.php');
+        } else {
+            header("location: ../pets/lista_pep.php?customerId=".$customerId);
+        } 
     }
 }
 
