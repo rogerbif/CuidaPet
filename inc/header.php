@@ -29,7 +29,7 @@
 			<div class="col-md-2">
 				<div class="row">					
 					<div class="col-md-12 text-center">						
-						<img src="<?php echo BASEURL; ?>images/puppies.jpg" class="img-fluid" alt="Responsive image">					
+						<img src="<?php echo BASEURL; ?>images/cuidapetlogo.png" class="img-fluid" alt="Responsive image">					
 					</div>			
 				</div>	
 			</div>
