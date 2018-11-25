@@ -23,17 +23,17 @@ $customer = find('customers', $pet['owner']);
 
 <div id="actions" class="row">
 	<div class="col-md-10" style="position: relative;"> 
-		<h2><?php echo $pet['name']; ?></h2>
+		<h2 style="color: #007bff"><?php echo $pet['name']; ?></h2>
 	</div>
     <div class="col-md-2" style="position: relative;"> 
 		<a href="edit.php?id=<?php echo $pet['id']; ?>" class="btn btn-primary">Editar</a> <a href="index.php" class="btn btn-default">Voltar</a> 
 	</div>
 </div>
+<hr>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-5">
 			<div style="height: 750px;">
-				<hr/>
 				<!-- card Dados Animal -->
 				<div class="card">
 					<div class="card-header" style="color: #007bff">

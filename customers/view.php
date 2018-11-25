@@ -17,19 +17,17 @@
 
 <div id="actions" class="row">
 	<div class="col-md-10" style="position: relative;"> 
-		<h2>Cliente <?php echo $customer['name']; ?></h2>
+		<h2 style="color: #007bff"><?php echo $customer['name']; ?></h2>
 	</div>
     <div class="col-md-2" style="position: relative;"> 
 		<a href="edit.php?id=<?php echo $customer['id']; ?>" class="btn btn-primary">Editar</a> <a href="index.php" class="btn btn-default">Voltar</a> 
 	</div>
 </div>
 <hr>
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-5">
 			<div style="height: 750px;">
-				<hr />
 				<!-- card Dados Pessoais -->
 				<div class="card">
 					<div class="card-header" style="color: #007bff">
@@ -109,7 +107,7 @@
 								<!-- Card body -->
 								<div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
 									  <div class="card-body">
-											<embed id="embedCustomer" type="text/html" src="../pets/lista_pep.php?customerId=<?php echo $customer['id']; ?>" width="100%" height="430px" />
+											<embed id="embedCustomer" type="text/html" src="../pets/lista_pep.php?customerId=<?php echo $customer['id']; ?>" width="100%" height="380px" />
 									  </div>
 								</div>
 						  </div>
@@ -126,7 +124,7 @@
 								<!-- Card body -->
 								<div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
 									  <div class="card-body">
-											<embed id="embedCustomer" type="text/html" src="../pets/lista_pep.php?customerId=<?php echo $customer['id']; ?>" width="100%" height="430px" />
+											<embed id="embedCustomer" type="text/html" src="../pets/lista_pep.php?customerId=<?php echo $customer['id']; ?>" width="100%" height="380px" />
 									  </div>
 								</div>
 						  </div>
@@ -143,7 +141,7 @@
 								<!-- Card body -->
 								<div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
 									  <div class="card-body">
-											<embed id="embedCustomer" type="text/html" src="../pets/lista_pep.php?customerId=<?php echo $customer['id']; ?>" width="100%" height="430px" />
+											<embed id="embedCustomer" type="text/html" src="../agenda/lista_agenda.php?customerId=<?php echo $customer['id']; ?>" width="100%" height="430px" />
 									  </div>
 								</div>
 						  </div>

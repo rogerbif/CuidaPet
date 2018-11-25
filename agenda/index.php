@@ -13,6 +13,12 @@
 ?>
 
 <?php
+require_once('../config.php');	
+require_once(DBAPI);
+$customers = null;	
+$customer = null;
+$customers = find_all('customers');
+
 date_default_timezone_set("America/Sao_Paulo");
 include 'config.php';
 include 'funciones.php';
@@ -27,7 +33,8 @@ if (isset($_POST['from']))
         $titulo = evaluar($_POST['title']);
         $body   = evaluar($_POST['event']);
         $clase  = evaluar($_POST['class']);
-        $query="INSERT INTO eventos VALUES(null,'$titulo','$body','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
+		$owner  = $_POST['owner'];
+        $query="INSERT INTO eventos VALUES(null,'$titulo','$body','','$clase','$inicio','$final','$inicio_normal','$final_normal','$owner')";
         $conexion->query($query); 
         $im=$conexion->query("SELECT MAX(id) AS id FROM eventos");
         $row = $im->fetch_row();  
@@ -38,8 +45,7 @@ if (isset($_POST['from']))
         header("Location:$base_url"); 
     }
 }
-
- ?>
+?>
 
  
 <!DOCTYPE html>
@@ -228,79 +234,98 @@ if (isset($_POST['from']))
 <div class="modal fade" id="add_evento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Adicionar</h4>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post">
-                    <label for="from">Inicio</label>
-                    <div class='input-group date' id='from'>
-                        <input type='text' id="from" name="from" class="form-control" readonly />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </div>
-					
-                    <br>
-
-                    <label for="to">Final</label>
-                    <div class='input-group date' id='to'>
-                        <input type='text' name="to" id="to" class="form-control" readonly />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </div>
-
-                    <br>
-
-                    <label for="tipo">Tipo de Serviço</label>
-                    <select class="form-control" name="class" id="tipo">
-                        <option value="event-info">Consulta</option>
-                        <option value="event-success">Banho/Tosa</option>
-                        <option value="event-important">Vacina</option>
-                        <option value="event-special">Exame</option>
-                        <option value="event-warning">Cirurgia</option>
-                    </select>
-
-                    <br>
-
-                    <label for="title">Serviço</label>
-                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Informe o Serviço">
-
-                    <br>
-
-                    <label for="body">Observações</label>
-                    <textarea id="body" name="event" required class="form-control" rows="3"></textarea>
-
-					<script type="text/javascript">
-						$(function () {
-							$('#from').datetimepicker({
-								orientation: 'left',
-								inline: true,
-								sideBySide: true,
-								defaultDate: "<?php echo date('Y/m/d h:i A'); ?>",
-								language: 'pt-BR',
-								use24hours: true,
-								showMeridian: false,
-								format: 'DD/MM/YYYY HH:mm',
-								minDate: moment().subtract(1, 'days')
-							});
-							$('#to').datetimepicker({
-								orientation: 'left',
-								inline: true,
-								sideBySide: true,
-								defaultDate: "<?php echo date('Y/m/d h:i A'); ?>",
-								language: 'pt-BR',
-								use24hours: true,
-								showMeridian: false,
-								format: 'DD/MM/YYYY HH:mm',
-								minDate: moment().subtract(1, 'days')
-							});
-						});
-					</script>
+		  <div class="modal-header">
+			<h4 class="modal-title" id="myModalLabel">Adicionar</h4>
+		  </div>
+		  <div class="modal-body">
+			<form action="" method="post">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="from">Inicio</label>
+						<div class='input-group date' id='from'>
+							<input type='text' id="from" name="from" class="form-control" readonly />
+							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+						</div>
 					</div>
-	<div class="modal-footer">
-		  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
-		  <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Adicionar</button>
-        </form>
-    </div>
-  </div>
+
+					<div class="form-group col-md-6">
+						<label for="to">Final</label>
+						<div class='input-group date' id='to'>
+							<input type='text' name="to" id="to" class="form-control" readonly />
+							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="tipo">Tipo de Serviço</label>
+						<select class="form-control" name="class" id="tipo">
+							<option value="event-info">Consulta</option>
+							<option value="event-success">Banho/Tosa</option>
+							<option value="event-important">Vacina</option>
+							<option value="event-special">Exame</option>
+							<option value="event-warning">Cirurgia</option>
+						</select>
+					</div>
+					
+					<div class="form-group col-md-6">
+						<label for="owner">Proprietario</label>
+						<select class="form-control" name="owner" id="owner"> 
+							<?php foreach ($customers as $customer): ?>  
+								<option value="<?php echo $customer['id']; ?>"><?php echo $customer['id']; ?> - <?php echo $customer['name']; ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label for="title">Serviço</label>
+						<input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Informe o Serviço">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label for="body">Observações</label>
+						<textarea id="body" name="event" required class="form-control" rows="3"></textarea>
+					</div>
+				</div>
+
+				<script type="text/javascript">
+					$(function () {
+						$('#from').datetimepicker({
+							orientation: 'left',
+							inline: true,
+							sideBySide: true,
+							defaultDate: "<?php echo date('Y/m/d h:i A'); ?>",
+							language: 'pt-BR',
+							use24hours: true,
+							showMeridian: false,
+							format: 'DD/MM/YYYY HH:mm',
+							minDate: moment().subtract(1, 'days')
+						});
+						$('#to').datetimepicker({
+							orientation: 'left',
+							inline: true,
+							sideBySide: true,
+							defaultDate: "<?php echo date('Y/m/d h:i A'); ?>",
+							language: 'pt-BR',
+							use24hours: true,
+							showMeridian: false,
+							format: 'DD/MM/YYYY HH:mm',
+							minDate: moment().subtract(1, 'days')
+						});
+					});
+				</script>
+			</div>
+			<div class="modal-footer">
+				  <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+				  <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Adicionar</button>
+			</div>
+		</form>
+	</div>
 </div>
 </div>
 </body>

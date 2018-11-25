@@ -15,8 +15,7 @@
 		padding-top: 5px;
 		padding-bottom: 20px;	        
 		}	    </style>	    
-		
-		<link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">	    
+			    
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">	
 		
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>

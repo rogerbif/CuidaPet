@@ -6,15 +6,14 @@ require_once(DBAPI);
 index($table);
 ?>
 <head>
-	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.min.css">	
-	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">	    
+	<link rel="stylesheet" href="<?php echo BASEURL; ?>css/bootstrap.min.css">	  
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">	
 	
    <script src="<?php echo BASEURL; ?>js/jquery.min.js"></script> 
    <script src="<?php echo BASEURL; ?>js/jquery.dataTables.min.js"></script>  
    <script src="<?php echo BASEURL; ?>js/dataTables.bootstrap.min.js"></script>            
    <link rel="stylesheet" href="<?php echo BASEURL; ?>css/dataTables.bootstrap.min.css" />   
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+   <link rel="stylesheet" href="<?php echo BASEURL; ?>css/3.3.6/bootstrap.min.css" />  
 </head>
 <div style="width: 570px;">
 <header>

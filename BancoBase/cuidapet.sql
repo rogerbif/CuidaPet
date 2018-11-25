@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Nov-2018 às 01:27
--- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 7.2.11
+-- Generation Time: 25-Nov-2018 às 02:54
+-- Versão do servidor: 10.1.34-MariaDB
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -75,32 +75,34 @@ CREATE TABLE `eventos` (
   `start` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `end` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `inicio_normal` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `final_normal` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `final_normal` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `owner` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Extraindo dados da tabela `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `inicio_normal`, `final_normal`) VALUES
-(2, 'teste 2', 'Teste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=2', 'event-special', '1541858400000', '1539144000000', '10/11/2018 12:00 PM', '10/10/2018 1:00 PM'),
-(3, 'teste', 'teste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=3', 'event-info', '1539174180000', '1539177780000', '10/10/2018 9:23 PM', '10/10/2018 10:23 PM'),
-(4, 'teste 3', 'teste 3', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=4', 'event-info', '1541840400000', '1539175740000', '10/11/2018 7:00 PM', '10/10/2018 9:49 PM'),
-(6, 'a', 'a', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=6', 'event-warning', '1539175860000', '1539175860000', '10/10/2018 9:51 PM', '10/10/2018 9:51 PM'),
-(8, 'c', 'c', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=8', 'event-info', '1539263220000', '1539266820000', '11/10/2018 10:07', '11/10/2018 11:07'),
-(9, 'AD', 'AD', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=9', 'event-info', '1539277200000', '1539280800000', '11/10/2018 14:00', '11/10/2018 15:00'),
-(10, 'AA', 'AAA', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=10', 'event-info', '1539273600000', '1539277200000', '11/10/2018 13:00', '11/10/2018 14:00'),
-(11, 'BBB', 'BB', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=11', 'event-info', '1539271800000', '1539273600000', '11/10/2018 12:30', '11/10/2018 13:00'),
-(12, 'AAAAA', 'AAAA', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=12', 'event-info', '1539619200000', '1539622800000', '15/10/2018 13:00', '15/10/2018 14:00'),
-(13, 'BBBBB', 'BBBBBB', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=13', 'event-info', '1539604800000', '1539608400000', '15/10/2018 09:00', '15/10/2018 10:00'),
-(14, 'Teste 16', 'Teste 16', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=14', 'event-success', '1539707220000', '1539710820000', '16/10/2018 13:27', '16/10/2018 14:27'),
-(15, 'TEste', 'TEsteTEste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=15', 'event-special', '1540656000000', '1540659600000', '27/10/2018 13:00', '27/10/2018 14:00'),
-(16, 'Teste', 'Teste', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=16', 'event-special', '1515672000000', '1515679200000', '11/01/2018 10:00', '11/01/2018 12:00'),
-(17, 'TESTE', 'TESTE', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=17', 'event-info', '1541430000000', '1541433600000', '05/11/2018 13:00', '05/11/2018 14:00'),
-(18, 'TESTE2', 'TESTE2', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=18', 'event-important', '1541433600000', '1541437200000', '05/11/2018 14:00', '05/11/2018 15:00'),
-(19, 'Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=19', 'event-info', '1543426200000', '1543441500000', '28/11/2018 15:30', '28/11/2018 19:45'),
-(20, 'Tosa', 'Informacoes adicionais', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=20', 'event-warning', '1542921000000', '1542924600000', '22/11/2018 19:10', '22/11/2018 20:10'),
-(21, 'Cirurgia de Calculo Renal', 'Manter jejum do pet 12hrs antes', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=21', 'event-warning', '1542929220000', '1542932820000', '22/11/2018 21:27', '22/11/2018 22:27');
+INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `inicio_normal`, `final_normal`, `owner`) VALUES
+(2, 'Banho e Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=2', 'event-special', '1541858400000', '1539144000000', '10/11/2018 12:00 PM', '10/10/2018 1:00 PM', 1),
+(3, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=3', 'event-info', '1539174180000', '1539177780000', '10/10/2018 9:23 PM', '10/10/2018 10:23 PM', 3),
+(4, 'Banho e Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=4', 'event-info', '1541840400000', '1539175740000', '10/11/2018 7:00 PM', '10/10/2018 9:49 PM', 11),
+(6, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=6', 'event-warning', '1539175860000', '1539175860000', '10/10/2018 9:51 PM', '10/10/2018 9:51 PM', 11),
+(8, 'Banho e Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=8', 'event-info', '1539263220000', '1539266820000', '11/10/2018 10:07', '11/10/2018 11:07', 11),
+(9, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=9', 'event-info', '1539277200000', '1539280800000', '11/10/2018 14:00', '11/10/2018 15:00', 10),
+(10, 'Banho e Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=10', 'event-info', '1539273600000', '1539277200000', '11/10/2018 13:00', '11/10/2018 14:00', 7),
+(11, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=11', 'event-info', '1539271800000', '1539273600000', '11/10/2018 12:30', '11/10/2018 13:00', 2),
+(12, 'Banho e Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=12', 'event-info', '1539619200000', '1539622800000', '15/10/2018 13:00', '15/10/2018 14:00', 11),
+(13, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=13', 'event-info', '1539604800000', '1539608400000', '15/10/2018 09:00', '15/10/2018 10:00', 7),
+(14, 'Banho e Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=14', 'event-success', '1539707220000', '1539710820000', '16/10/2018 13:27', '16/10/2018 14:27', 11),
+(15, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=15', 'event-special', '1540656000000', '1540659600000', '27/10/2018 13:00', '27/10/2018 14:00', 1),
+(16, 'Banho e Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=16', 'event-special', '1515672000000', '1515679200000', '11/01/2018 10:00', '11/01/2018 12:00', 3),
+(17, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=17', 'event-info', '1541430000000', '1541433600000', '05/11/2018 13:00', '05/11/2018 14:00', 11),
+(18, 'Banho e Tosa', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=18', 'event-important', '1541433600000', '1541437200000', '05/11/2018 14:00', '05/11/2018 15:00', 2),
+(19, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=19', 'event-info', '1543426200000', '1543441500000', '28/11/2018 15:30', '28/11/2018 19:45', 11),
+(20, 'Banho e Tosa', 'Informacoes adicionais', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=20', 'event-warning', '1542921000000', '1542924600000', '22/11/2018 19:10', '22/11/2018 20:10', 2),
+(21, 'Cirurgia de Calculo Renal', 'Manter jejum do pet 12hrs antes', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=21', 'event-warning', '1542929220000', '1542932820000', '22/11/2018 21:27', '22/11/2018 22:27', 2),
+(22, 'Consulta de Rotina', 'Apos consulta entregar no endereço do cadastro', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=22', 'event-info', '1543399200000', '1543402800000', '28/11/2018 08:00', '28/11/2018 09:00', 0);
 
 -- --------------------------------------------------------
 
@@ -307,7 +309,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `pets`
