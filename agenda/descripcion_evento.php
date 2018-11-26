@@ -34,11 +34,11 @@ if (isset($_POST['eliminar_evento']))
     $sql = "DELETE FROM eventos WHERE id = $id";
     if ($conexion->query($sql)) 
     {
-        echo "Evento eliminado";
+        echo "Agenda Excluida";
     }
     else
     {
-        echo "El evento no se pudo eliminar";
+        echo "A Agenda não pode ser Excluida";
     }
 }
  ?>
@@ -59,6 +59,6 @@ if (isset($_POST['eliminar_evento']))
  	<p><?=$evento?></p>
 </body>
 <form action="" method="post">
-    <button type="submit" class="btn btn-danger" name="eliminar_evento">Eliminar</button>
+    <button type="submit" class="btn btn-danger" name="eliminar_evento">Excluir</button>
 </form>
 </html>

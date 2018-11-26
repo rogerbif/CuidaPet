@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Nov-2018 às 02:54
+-- Generation Time: 26-Nov-2018 às 16:55
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -50,7 +50,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `cpf_cnpj`, `birthdate`, `address`, `hood`, `zip_code`, `city`, `state`, `phone`, `mobile`, `ie`, `created`, `modified`) VALUES
-(1, 'Tavico das Guria', '123.456.789-00', '1989-01-01', 'Rua da Web, 123', 'Internet', 1234568, 'Teste', 'Teste', 5555555, 55555555, 123456, '2016-05-24 00:00:00', '2018-11-01 12:48:01'),
+(1, 'Otavio da Silva', '123.456.789-00', '1989-01-01', 'Rua da Web, 123', 'Internet', 1234568, 'Teste', 'Teste', 5555555, 55555555, 123456, '2016-05-24 00:00:00', '2018-11-26 13:43:31'),
 (4, 'Eduardo Bujak', '', '0000-00-00', 'Rua Belem 345', '', 92500000, 'Guaiba', 'RS', 2147483647, 0, 0, '2018-10-28 19:52:17', '2018-11-01 12:37:34'),
 (5, 'Raquel Kayser', '', '0000-00-00', 'Rua Belem 345', '', 92500000, 'Guaiba', 'RS', 2147483647, 0, 0, '2018-10-28 19:52:22', '2018-11-01 12:39:07'),
 (6, 'Roger de Souza Bif', '99673231087', '0000-00-00', 'Rua Belem 345', 'Sta Rita', 92500000, 'Guaiba', 'RS', 2147483647, 2147483647, 0, '2018-10-28 19:52:56', '2018-10-28 19:52:56'),
@@ -102,7 +102,8 @@ INSERT INTO `eventos` (`id`, `title`, `body`, `url`, `class`, `start`, `end`, `i
 (19, 'Consulta de Rotina', 'Buscar na casa da proprietaria 30 min antes. ', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=19', 'event-info', '1543426200000', '1543441500000', '28/11/2018 15:30', '28/11/2018 19:45', 11),
 (20, 'Banho e Tosa', 'Informacoes adicionais', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=20', 'event-warning', '1542921000000', '1542924600000', '22/11/2018 19:10', '22/11/2018 20:10', 2),
 (21, 'Cirurgia de Calculo Renal', 'Manter jejum do pet 12hrs antes', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=21', 'event-warning', '1542929220000', '1542932820000', '22/11/2018 21:27', '22/11/2018 22:27', 2),
-(22, 'Consulta de Rotina', 'Apos consulta entregar no endereço do cadastro', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=22', 'event-info', '1543399200000', '1543402800000', '28/11/2018 08:00', '28/11/2018 09:00', 0);
+(22, 'Consulta de Rotina', 'Apos consulta entregar no endereço do cadastro', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=22', 'event-info', '1543399200000', '1543402800000', '28/11/2018 08:00', '28/11/2018 09:00', 0),
+(23, 'Vacina no biribiri', 'Biribiri = binguli', 'http://localhost/cuidapet/agenda/descripcion_evento.php?id=23', 'event-important', '1543227600000', '1543230000000', '26/11/2018 08:20', '26/11/2018 09:00', 1);
 
 -- --------------------------------------------------------
 
@@ -303,19 +304,19 @@ ALTER TABLE `vacinas`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `profissionais`
